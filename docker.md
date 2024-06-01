@@ -1,3 +1,4 @@
+# Que es el Dockerfile?
 Un **Dockerfile** es un archivo de texto que contiene un conjunto de instrucciones para construir una imagen de Docker. Docker es una plataforma que permite desarrollar, enviar y ejecutar aplicaciones en contenedores, los cuales son entornos ligeros y portátiles que pueden ejecutar aplicaciones de manera aislada del sistema operativo subyacente.
 
 ### Función del Dockerfile
