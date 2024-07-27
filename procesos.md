@@ -273,3 +273,141 @@ classDiagram
     PROCEDURES "define" --> PROC_PHASES : id_procedure
 
 ```
+
+## Diagrama Lógico
+```mermaid
+erDiagram
+    PROCEDURES {
+        int id_procedure PK "ID de procedimiento"
+        varchar consecutive "Consecutivo"
+        int id_proc_type "ID de tipo de procedimiento"
+    }
+    PROCEDURES_TYPES {
+        int id_proc_type PK "ID de tipo de procedimiento"
+        varchar name "Nombre"
+    }
+    PROC_TYPES_PHASES {
+        int id_proc_type_phase PK "ID de tipo de fase de procedimiento"
+        int id_proc_type "ID de tipo de procedimiento"
+        int id_phase "ID de fase"
+    }
+    ROLES {
+        int id_role PK "ID de rol"
+        varchar name "Nombre"
+    }
+    STATES {
+        int id_state PK "ID de estado"
+        varchar name "Nombre"
+    }
+    JOBS {
+        int id_job PK "ID de trabajo"
+        varchar name "Nombre"
+    }
+    STATES_JOBS {
+        int id_state_job PK "ID de estado de trabajo"
+        int id_state "ID de estado"
+        int id_job "ID de trabajo"
+    }
+    PHASES {
+        int id_phase PK "ID de fase"
+        varchar name "Nombre"
+        int id_state "ID de estado"
+        int id_phase_caterogy "ID de categoría de fase"
+    }
+    PHASE_CATEGORY {
+        int id_phase_caterogy PK "ID de categoría de fase"
+        varchar name "Nombre"
+    }
+    ACTIONS {
+        int id_action PK "ID de acción"
+        varchar name "Nombre"
+    }
+    PHASE_ACTIONS {
+        int id_phase_action PK "ID de acción de fase"
+        int id_phase "ID de fase"
+        int id_action "ID de acción"
+    }
+    ROLES_PHASE {
+        int id_ROLE_PHASE PK "ID de rol de fase"
+        int id_phase "ID de fase"
+        int id_role "ID de rol"
+    }
+    PHASES_FLOW {
+        int id_phase_flow PK "ID de flujo de fase"
+        int id_phase_from "ID de fase desde"
+        int id_phase_to "ID de fase hasta"
+    }
+    PROC_ROLES {
+        int id_proc_role PK "ID de rol de procedimiento"
+        varchar name "Nombre"
+    }
+    PROC_STATES {
+        int id_proc_state PK "ID de estado de procedimiento"
+        varchar name "Nombre"
+    }
+    PROC_JOBS {
+        int id_proc_job PK "ID de trabajo de procedimiento"
+        varchar name "Nombre"
+    }
+    PROC_STATES_JOBS {
+        int id_proc_state_job PK "ID de estado de trabajo de procedimiento"
+        int id_proc_state "ID de estado de procedimiento"
+        int id_proc_job "ID de trabajo de procedimiento"
+    }
+    PROC_PHASES {
+        int id_proc_phase PK "ID de fase de procedimiento"
+        varchar name "Nombre"
+        int id_proc_state "ID de estado de procedimiento"
+        int id_proc_phase_caterogy "ID de categoría de fase de procedimiento"
+        int id_procedure "ID de procedimiento"
+    }
+    PROC_PHASE_CATEGORY {
+        int id_proc_phase_caterogy PK "ID de categoría de fase de procedimiento"
+        varchar name "Nombre"
+    }
+    PROC_ACTIONS {
+        int id_proc_action PK "ID de acción de procedimiento"
+        varchar name "Nombre"
+    }
+    PROC_PHASE_ACTIONS {
+        int id_proc_phase_action PK "ID de acción de fase de procedimiento"
+        int id_proc_phase "ID de fase de procedimiento"
+        int id_proc_action "ID de acción de procedimiento"
+    }
+    PROC_ROLES_PHASE {
+        int id_proc_ROLE_PHASE PK "ID de rol de fase de procedimiento"
+        int id_proc_phase "ID de fase de procedimiento"
+        int id_proc_role "ID de rol de procedimiento"
+    }
+    PROC_PHASES_FLOW {
+        int id_proc_phase_flow PK "ID de flujo de fase de procedimiento"
+        int id_proc_phase_from "ID de fase de procedimiento desde"
+        int id_proc_phase_to "ID de fase de procedimiento hasta"
+    }
+
+    PROCEDURES_TYPES ||--o| PROCEDURES : "define"
+    PROCEDURES_TYPES ||--o| PROC_TYPES_PHASES : "asigna"
+    PROC_TYPES_PHASES ||--o| PHASES : "incluye"
+    STATES ||--o| PHASES : "define"
+    PHASE_CATEGORY ||--o| PHASES : "clasifica"
+    PHASES ||--o| PHASE_ACTIONS : "tiene"
+    ACTIONS ||--o| PHASE_ACTIONS : "es parte de"
+    ROLES ||--o| ROLES_PHASE : "es asignado a"
+    PHASES ||--o| ROLES_PHASE : "tiene"
+    PHASES ||--o| PHASES_FLOW : "fluye a"
+    PHASES ||--o| PHASES_FLOW : "fluye desde"
+    JOBS ||--o| STATES_JOBS : "es gestionado por"
+    STATES ||--o| STATES_JOBS : "es gestionado por"
+    PROCEDURES ||--o| PROC_PHASES : "define"
+    PROC_STATES ||--o| PROC_PHASES : "define"
+    PROC_PHASE_CATEGORY ||--o| PROC_PHASES : "clasifica"
+    PROC_PHASES ||--o| PROC_PHASE_ACTIONS : "tiene"
+    PROC_ACTIONS ||--o| PROC_PHASE_ACTIONS : "es parte de"
+    PROC_ROLES ||--o| PROC_ROLES_PHASE : "es asignado a"
+    PROC_PHASES ||--o| PROC_ROLES_PHASE : "tiene"
+    PROC_PHASES ||--o| PROC_PHASES_FLOW : "fluye a"
+    PROC_PHASES ||--o| PROC_PHASES_FLOW : "fluye desde"
+    PROC_JOBS ||--o| PROC_STATES_JOBS : "es gestionado por"
+    PROC_STATES ||--o| PROC_STATES_JOBS : "es gestionado por"
+
+```
