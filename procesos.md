@@ -1,4 +1,33 @@
-# PROCESOS
+# DESCRIPCION
+
+Esta propuesta esta diseñada para un sistema que gestiona **procesos** o **procedimientos** complejos, con una estructura que incluye roles, estados, trabajos, fases, y acciones. Este tipo de sistema podría estar orientado a la gestión de flujos de trabajo, procesos empresariales, o algún tipo de sistema de administración de proyectos. Aquí te dejo algunos posibles escenarios para el sistema que podría utilizar esta logica:
+
+### Posibles Tipos de Sistema
+
+1. **Sistema de Gestión de Procesos Empresariales (BPM)**:
+   * **Descripción**: Un sistema que ayuda a modelar, gestionar y optimizar los procesos de negocio de una organización. Las entidades como `PROCEDURES`, `PHASES`, y `ACTIONS` sugieren que el sistema está orientado a gestionar el flujo de trabajo y las distintas fases de un proceso empresarial.
+   * **Características**:
+     * Definición y gestión de procedimientos y fases de procesos.
+     * Control de roles y responsabilidades en cada fase.
+     * Monitoreo de estados y transiciones entre trabajos.
+2. **Sistema de Gestión de Proyectos**:
+   * **Descripción**: Un sistema utilizado para planificar, ejecutar y controlar proyectos complejos. El enfoque en fases, roles, y estados indica que el sistema podría estar diseñado para supervisar la ejecución de proyectos y la asignación de tareas.
+   * **Características**:
+     * Seguimiento del progreso de las fases del proyecto.
+     * Asignación y gestión de roles y responsabilidades.
+     * Control de estados y cambios en el proyecto.
+3. **Sistema de Control de Producción**:
+   * **Descripción**: Un sistema orientado a la gestión y control de las etapas de producción o manufactura. La inclusión de `PROC_PHASES`, `PROC_ACTIONS`, y `PROC_JOBS` sugiere que el sistema podría estar dirigido a controlar los diferentes pasos y acciones dentro de una línea de producción.
+   * **Características**:
+     * Gestión de fases y estados de producción.
+     * Control de trabajos y roles en el proceso de producción.
+     * Optimización de flujos de trabajo y fases de producción.
+4. **Sistema de Gestión de Procedimientos Administrativos**:
+   * **Descripción**: Un sistema diseñado para administrar procedimientos internos, normativas o reglas dentro de una organización. La estructura del MER refleja un enfoque en la gestión de procedimientos administrativos y su relación con estados y roles.
+   * **Características**:
+     * Definición y seguimiento de procedimientos administrativos.
+     * Gestión de roles y responsabilidades asociadas a los procedimientos.
+     * Control de la evolución de estados y fases administrativas.
 
 ## Diagrama de clases (PARAMETRIZACION)
 
@@ -275,6 +304,7 @@ classDiagram
 ```
 
 ## Diagrama Lógico
+
 ```mermaid
 erDiagram
     PROCEDURES {
