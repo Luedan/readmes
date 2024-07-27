@@ -303,7 +303,7 @@ classDiagram
 
 ```
 
-## Diagrama Lógico
+## Diagrama  MER (LOGICO Y ENTIDAD RELACION)
 
 ```mermaid
 erDiagram
